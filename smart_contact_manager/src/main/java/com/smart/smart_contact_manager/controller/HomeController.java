@@ -1,27 +1,27 @@
 package com.smart.smart_contact_manager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.smart.smart_contact_manager.dao.UserRepository;
-import com.smart.smart_contact_manager.entities.Contact;
-import com.smart.smart_contact_manager.entities.User;
 
-@RestController
+@Controller
 public class HomeController {
 
     @Autowired
     private UserRepository userRepository;
  
-    @GetMapping("/test")
-    public String test(){
-        User user = new User();
-        user.setName("Ashwin");
-        user.setEmail("ashwinrathore@gmail.com");
-        Contact contact = new Contact();
-        user.getContacts().add(contact);
-        userRepository.save(user);
-        return "working!!";
+    @RequestMapping("/home")
+    public String home(Model model){
+        model.addAttribute("title", "Home - Smart Contact Manager");
+        return "home";
+    }
+
+    @RequestMapping("/about")
+    public String about(Model model){
+        model.addAttribute("title", "About - Smart Contact Manager");
+        return "about";
     }
 }
