@@ -1,0 +1,20 @@
+body {
+    background: #e2e2e2;
+}
+
+.bg-primary {
+    background: cyan;
+}
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)) ,url(../images/contact-us-2-62fa2cc2edbaf-sej-1520x800.webp);
+    background-size: cover;
+    color: white
+}
+
+.mycard {
+    padding: 20px;
+    background: #FFFFFF;
+}
